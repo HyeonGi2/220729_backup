@@ -1,0 +1,26 @@
+{{>layouts/header}}
+<div class="container my-3">
+    {{#article}}
+        <h3 class="border-bottom py-2 fs-4">{{title}}</h3>
+        <div class="d-flex justify-content-start">
+            <div class="mr-2">{{updateDate}}</div>
+            <div>조회 :{{viewCount}}</div>
+        </div>
+
+        <div class="card my-3">
+            <div class="card-body">
+                <div class="fs-5">
+                    {{body}}
+                </div>
+            </div>
+        </div>
+        {{>article/article_button}}
+        {{>comment/comment_view}}
+    {{/article}}
+
+</div>
+{{>layouts/footer}}
+
+
+
+

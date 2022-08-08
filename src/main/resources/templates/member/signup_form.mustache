@@ -1,0 +1,91 @@
+{{>layouts/header}}
+<div class="container my-3">
+    <div class="my-3 border-bottom">
+        <div>
+            <h4>회원가입</h4>
+        </div>
+    </div>
+    <table>
+        <tr>
+            {{#loginIdError}}
+                <div class="alert alert-danger alert-dismissible">
+<<<<<<< HEAD
+                    <p>이미 등록된 사용자 입니다.</p>
+=======
+                    <p>이미 등록된 아이디입니다.</p>
+>>>>>>> 56ec448d07e39abe884c66eb11e37041c19a523c
+                </div>
+            {{/loginIdError}}
+            {{#nickNameError}}
+                <div class="alert alert-danger alert-dismissible">
+                    <p>이미 등록된 닉네임입니다.</p>
+                </div>
+            {{/nickNameError}}
+
+        </tr>
+        <tr>
+            <td name="loginId" value="{{#SignupForm}}{{loginId}}{{/SignupForm}}"></td>
+            {{#validationErrors}}
+                {{#loginId}}
+                    <div class="alert alert-primary alert-dismissible">
+                        {{loginId}}
+                    </div>
+                {{/loginId}}
+            {{/validationErrors}}
+        </tr>
+        <tr>
+            <td name="loginPw" value="{{#SignupForm}}{{loginPw}}{{/SignupForm}}"></td>
+            {{#validationErrors}}
+                {{#loginPw}}
+                    <div class="alert alert-primary alert-dismissible">
+                        {{loginPw}}
+                    </div>
+                {{/loginPw}}
+            {{/validationErrors}}
+        </tr>
+        <tr>
+            <td name="name" value="{{#SignupForm}}{{name}}{{/SignupForm}}"></td>
+            {{#validationErrors}}
+                {{#name}}
+                    <div class="alert alert-primary alert-dismissible">
+                        {{name}}
+                    </div>
+                {{/name}}
+            {{/validationErrors}}
+        </tr>
+        <tr>
+            <td name="nickName" value="{{#SignupForm}}{{nickName}}{{/SignupForm}}"></td>
+            {{#validationErrors}}
+                {{#nickName}}
+                    <div class="alert alert-primary alert-dismissible">
+                        {{nickName}}
+                    </div>
+                {{/nickName}}
+            {{/validationErrors}}
+        </tr>
+    </table>
+    <form action="/member/signup" method="post">
+
+        <div class="mb-3">
+            <label for="loginId" class="form-label">사용자ID</label>
+            <input type="text" class="form-control" name="loginId">
+        </div>
+        <div class="mb-3">
+            <label for="loginPw" class="form-label">비밀번호</label>
+            <input type="password" class="form-control" name="loginPw">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">이름</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="nickName" class="form-label">닉네임</label>
+            <input type="text" class="form-control" name="nickName">
+        </div>
+        <!-- 일반 사용자 가입 구현 중-->
+        <!--        <input type="hidden" id="authority" name="authority" value="5">-->
+        <button type="submit" class="btn btn-primary">회원가입</button>
+    </form>
+</div>
+</html>
+{{>layouts/footer}}
